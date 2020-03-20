@@ -10,14 +10,16 @@ public class MTest {
 				new ClassPathXmlApplicationContext("com/test01/aopAppcontext.xml");
 		
 		Human person01 = factory.getBean("person01",Human.class);
-		System.out.println(person01.sayName("뽀로로"));
-		System.out.println(person01.sayJob("개발자"));
+		person01.sayName("뽀로로");
+		person01.sayJob("개발자");
+		//System.out.println(person01.sayName("뽀로로"));
+		//System.out.println(person01.sayJob("개발자"));
 		
 		System.out.println("------");
 		
 		Human person02 = factory.getBean("person02",Human.class);
-		System.out.println(person01.sayName("둘리"));
-		System.out.println(person01.sayJob("개그맨"));
+		//System.out.println(person01.sayName("둘리"));
+		//System.out.println(person01.sayJob("개그맨"));
 
 	}
 }
