@@ -17,9 +17,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	@Override
 	public List<BoardDto> selectList() {
-		
 		List<BoardDto> list = new ArrayList<BoardDto>();
-		
 		try {
 			list = sqlSession.selectList(NAMESPACE+"selectList");
 		} catch (Exception e) {
@@ -31,9 +29,7 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public BoardDto selectOne(int myno) {
-		
 		BoardDto dto = new BoardDto();
-		
 		try {
 			dto = sqlSession.selectOne(NAMESPACE+"selectOne", myno);
 		} catch (Exception e) {
@@ -45,9 +41,7 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public int insert(BoardDto dto) {
-		
 		int res = 0;
-		
 		try {
 			res = sqlSession.insert(NAMESPACE+"insert", dto);
 		} catch (Exception e) {
@@ -59,9 +53,7 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public int update(BoardDto dto) {
-		
 		int res = 0;
-		
 		try {
 			res = sqlSession.update(NAMESPACE+"update", dto);
 		} catch (Exception e) {
@@ -73,9 +65,7 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public int delete(int myno) {
-		
 		int res = 0;
-		
 		try {
 			res = sqlSession.delete(NAMESPACE+"delete", myno);
 		} catch (Exception e) {

@@ -28,6 +28,13 @@
 		WHERE MYNO = #{myno}
 	</update>
 	
+	<insert id="insert" parameterType="boardDto">
+		INSERT INTO MYBOARD 
+		VALUES(MYNOSEQ.NEXTVAL, #{myname}, #{mytitle}, #{mycontent}, SYSDATE)
+	</insert>
 	
+	<delete id="delete">
+		DELETE FROM MYBOARD WHERE MYNO = #{myno}
+	</delete>
 	
 </mapper>

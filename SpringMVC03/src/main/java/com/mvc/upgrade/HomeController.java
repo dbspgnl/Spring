@@ -72,4 +72,39 @@ public class HomeController {
 		}
 	}
 	
+	@RequestMapping("/insert.do")
+	public String insert() {
+		logger.info("INSERT FROM");
+		return "mvcinsert";
+	}
+	
+	@RequestMapping("/insertres.do")
+	public String updateForm(Model model, String myname, String mytitle, String mycontent) {
+		logger.info("INSERT RESULT");
+		
+		BoardDto dto = new BoardDto();
+		dto.setMyname(myname);
+		dto.setMytitle(mytitle);
+		dto.setMycontent(mycontent);
+		
+		int res = biz.insert(dto);
+		if(res>0) {
+			return "redirect:list.do";
+		} else {
+			return "redirect:insert.do";
+		}
+	}
+	
+	@RequestMapping("/delete.do")
+	public String delete(int myno) {
+		logger.info("DELETE RESULT");
+		
+		int res = biz.delete(myno);
+		if(res>0) {
+			return "redirect:list.do";
+		} else {
+			return "redirect:detail.do?myno="+myno;
+		}
+	}
+	
 }
