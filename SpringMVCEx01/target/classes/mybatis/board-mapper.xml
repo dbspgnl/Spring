@@ -10,7 +10,7 @@
 		<result property="mydate" column="MYDATE"/>	
 	</resultMap>
  
- 	<select id="selectList" resultType="boardMap">
+ 	<select id="selectList" resultMap="boardMap">
  		SELECT MYNO, MYNAME, MYTITLE, MYCONTENT, MYDATE
  		FROM MYBOARD
  		ORDER BY MYNO DESC

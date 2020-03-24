@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
+	<table border="1">
 		<colgroup>
 			<col width="50"/>
 			<col width="100"/>

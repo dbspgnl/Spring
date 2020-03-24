@@ -6,7 +6,7 @@ import com.mvc.ex01.model.dto.BoardDto;
 
 public interface BoardDao {
 
-	String NAMESPACE = ".myboard";
+	String NAMESPACE = "myboard.";
 	
 	public List<BoardDto> selectList();
 	public BoardDto selectOne(int myno);

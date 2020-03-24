@@ -22,6 +22,7 @@ public class BoardDaoImpl implements BoardDao {
 			list = sqlSession.selectList(NAMESPACE+"selectList");
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("[ERROR] : select list");
 		}
 		return list;
 	}
