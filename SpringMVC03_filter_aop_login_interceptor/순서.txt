@@ -1,0 +1,52 @@
+SpringMVC03
+1. pom.xml : ojdbc6(+repository), mybatis, mybatis-spring, commons-dbcp, spring-orm(스프링_마이바티스)
+	- <repositories>...</repositories> ojdbc6 사용을 위한 repository 추가해줘야함
+2. web.xml : applicationContext.xml, mapping(*.do), encoding filter
+3. /WEB-INF/spring/sqls/myboard.sql
+4. dto, dao, biz, controller
+5. src/main/recources/mybatis/board-mapper.xml
+	-mapper 태그 안에 namespace="" 잡아줘야한다. '.'빼고 이름 넣어야한다. 
+6. src/main.resources/mybatis/db.properties (얘는 파일이다)
+	-driver/url/username/password를 잡아준다.
+7. /WEB-INF/spring/sqls/config.xml
+	-<mapper resource="/">로 mapper의 경로를 잡아주고 필요시 typeAliases 잡아준다.
+8. applicationContext.xml, servlet-context.xml
+	-applicatoinContext에서 db.properties/dataSource/mybatis/sqlSessionTemplate 을 설정해준다.
+
+_filter
+9. com/mvc/upgrade/common/filter/LogFilter (impl javax.servlet.Filter)
+	-Logeger&LoggerFactory는 org.slf4j를 import한다.
+10. web.xml : filter
+
+_aop
+11. pom.xml : aspectjweaver, aspectjrt(디펜던시 추가)
+12. com/mvc/upgrade/common/aop/LogAop (클래스)
+13. WEB-INF/spring/appServlet/aop-context.xml(spring bean configuration.xml)
+14. web.xml : aop-context.xml 추가 (init-param) (appServlet의 <param-value>사이에 넣자)
+15. src/main/resources/log4j.xml (logger 추가 및 log level 변경 - trace)
+
+_login
+16. pom.xml : jackson-core-asl, jackson-mapper-asl (spring 4.x 이후부터는 변경됨)
+17. WEB-INF/spring/sqls/mymber.sql
+18. dto, dao, biz, controller
+19. src/main/resources/mybatis/member-mapper.xml
+20. WEB-INF/spring/sqls/config.xml
+
+_interceptor
+21. com/mvc/upgrade/common/interceptor/LoginInterceptor (impl HandlerInterceptor)
+22. servlet-context.xml : interceptor 추가
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

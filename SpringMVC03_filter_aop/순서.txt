@@ -1,0 +1,21 @@
+SpringMVC03
+1. pom.xml : ojdbc6(+repository), mybatis, mybatis-spring, commons-dbcp, spring-orm(스프링_마이바티스)
+2. web.xml : applicationContext.xml, mapping(*.do), encoding filter
+3. /WEB-INF/spring/sqls/myboard.sql
+4. dto, dao, biz, controller
+5. src/main/recources/mybatis/board-mapper.xml
+6. src/main.resources/mybatis/db.properties
+7. /WEB-INF/spring/sqls/config.xml
+8. applicationContext.xml, servlet-context.xml
+
+_filter
+9. com/mvc/upgrade/common/filter/LogFilter (impl javax.servlet.Filter)
+	-Logeger&LoggerFactory는 org.slf4j를 import한다.
+10. web.xml : filter
+
+_aop
+11. pom.xml : aspectjweaver, aspectjrt(디펜던시 추가)
+12. com/mvc/upgrade/common/aop/LogAop (클래스)
+13. WEB-INF/spring/appServlet/aop-context.xml(spring bean configuration.xml)
+14. web.xml : aop-context.xml 추가 (init-param) (appServlet의 <param-value>사이에 넣자)
+15. src/main/resources/log4j.xml (logger 추가 및 log level 변경 - trace)
