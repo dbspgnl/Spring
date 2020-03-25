@@ -49,4 +49,27 @@ public class MemberController {
 		map.put("check", check);
 		return map;
 	}
+	@RequestMapping("/joinform.do")
+	public String joinform() {
+		logger.info("JOIN FORM");
+		return "mvcjoin";
+	}
+	@RequestMapping(value = "/joinres.do", method = RequestMethod.POST)
+	public String joinres(MemberDto dto) {
+		logger.info("JOIN RES");
+		//HttpSession session = null;
+		System.out.println("============join 정보===========");
+		System.out.println(dto.getMemberid());
+		System.out.println(dto.getMemberpw());
+		System.out.println(dto.getMembername());
+		int res = biz.join(dto);
+		System.out.println("==========biz.join==========");
+		System.out.println(res);
+		if(res>0) {
+			//session.setAttribute("login", dto.getMemberid());
+			return "redirect:index.html";
+		} else {
+			return "redirect:loginform.do";
+		}
+	}
 }

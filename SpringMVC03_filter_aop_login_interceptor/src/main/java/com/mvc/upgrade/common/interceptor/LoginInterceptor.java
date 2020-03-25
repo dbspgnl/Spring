@@ -22,10 +22,15 @@ public class LoginInterceptor implements HandlerInterceptor {
 			) {
 			return true;
 		}
+		if(request.getRequestURI().contains("/joinform.do")||
+			request.getRequestURI().contains("/joinres.do")) {
+			return true;
+		}
 		if(request.getSession().getAttribute("login") == null ) {
 			response.sendRedirect("loginform.do");
 		}
 		return false;
+		//return true;
 	}
 
 	@Override

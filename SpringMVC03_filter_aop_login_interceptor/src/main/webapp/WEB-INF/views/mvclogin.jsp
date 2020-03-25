@@ -59,6 +59,7 @@
 		
 			<td colspan="2" align="center">
 				<input type="button" value="login" onclick="login();">
+				<input type="button" value="join" onclick="location.href='joinform.do'">
 			</td>
 		</tr>
 		<tr>

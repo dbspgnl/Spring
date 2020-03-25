@@ -15,8 +15,8 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public MemberDto login(MemberDto dto) {
 		MemberDto res = null;
-		System.out.println(">"+dto.getMemberid());
-		System.out.println(">"+dto.getMemberpw());
+		//System.out.println(">"+dto.getMemberid());
+		//System.out.println(">"+dto.getMemberpw());
 		try {
 			res = sqlSession.selectOne(NAMESPACE+"login", dto);
 		} catch (Exception e) {
@@ -25,5 +25,16 @@ public class MemberDaoImpl implements MemberDao {
 		}
 		return res;
 	}
-
+	@Override
+	public int join(MemberDto dto) {
+		int res = 0;
+		try {
+			res = sqlSession.insert(NAMESPACE+"join", dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("[ERROR]: MemberDaoImpl insert");
+		}
+		return res;
+	}
+	
 }

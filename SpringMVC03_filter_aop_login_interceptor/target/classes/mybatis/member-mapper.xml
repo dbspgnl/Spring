@@ -9,4 +9,8 @@
 		AND MEMBERPW = #{memberpw}
 	</select>
 	
+	<insert id="join" parameterType="com.mvc.upgrade.model.dto.MemberDto">
+		INSERT INTO MYMEMBER VALUES(MEMBERSEQ.NEXTVAL, #{memberid}, #{memberpw}, #{membername})
+	</insert>
+	
 </mapper>
