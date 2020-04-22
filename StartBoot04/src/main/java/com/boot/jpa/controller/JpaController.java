@@ -51,6 +51,7 @@ public class JpaController {
 	
 	@PostMapping("/updateres")
 	public String updateRes(JpaDto dto) {
+		dto.setMydate(new Date());
 		dao.save(dto);
 		return "redirect:detail?myno="+dto.getMyno();
 	}

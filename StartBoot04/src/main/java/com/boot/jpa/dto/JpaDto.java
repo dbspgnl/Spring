@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -14,9 +15,12 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="MYBOARD")
 public class JpaDto {
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Column
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="MYNOSEQ")
+	@SequenceGenerator(name="MYNOSEQ", sequenceName="MYNOSEQ", allocationSize=1)
 	private int myno;
 	@Column
 	private String myname;
