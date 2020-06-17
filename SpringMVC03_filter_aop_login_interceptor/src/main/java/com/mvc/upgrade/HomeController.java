@@ -79,14 +79,8 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/insertres.do")
-	public String updateForm(Model model, String myname, String mytitle, String mycontent) {
-		logger.info("INSERT RESULT");
-		
-		BoardDto dto = new BoardDto();
-		dto.setMyname(myname);
-		dto.setMytitle(mytitle);
-		dto.setMycontent(mycontent);
-		
+	public String updateForm(Model model, BoardDto dto) {
+		logger.info("INSERT RESULT");	
 		int res = biz.insert(dto);
 		if(res>0) {
 			return "redirect:list.do";

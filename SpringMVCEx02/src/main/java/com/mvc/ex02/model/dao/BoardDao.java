@@ -8,4 +8,6 @@ public interface BoardDao {
 
 	String NAMESPACE = "myboard.";
 	public List<BoardDto> selectList ();
+	public String test();
+	public int insert(BoardDto dto);
 }

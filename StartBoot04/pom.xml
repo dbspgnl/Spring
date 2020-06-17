@@ -51,11 +51,6 @@
 		</dependency>
 		
 		<!-- 추가 -->
-		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
-		<dependency>
-		    <groupId>org.apache.tomcat.embed</groupId>
-		    <artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
 		<dependency>
 		    <groupId>oracle</groupId>

@@ -8,4 +8,9 @@
 		ORDER BY MYNO DESC
  	</select>
 
+	<insert id="insert" parameterType="boardDto">
+		INSERT INTO MYBOARD 
+		VALUES(MYNOSEQ.NEXTVAL, #{myname}, #{mytitle}, #{mycontent}, SYSDATE)
+	</insert>
+
 </mapper>

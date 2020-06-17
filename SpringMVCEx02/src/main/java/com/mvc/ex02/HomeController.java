@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mvc.ex02.model.biz.BoardBiz;
+import com.mvc.ex02.model.dto.BoardDto;
 
 @Controller
 public class HomeController {
@@ -37,6 +38,30 @@ public class HomeController {
 		logger.info("SELECT LIST");
 		model.addAttribute("list", biz.selectList());
 		return "mvclist";
+	}
+	
+	@RequestMapping("/insert.do")
+	public String insert() {
+		logger.info("INSERT FROM");
+		return "mvcinsert";
+	}
+	
+	@RequestMapping("/insertres.do")
+	public String updateForm(Model model, BoardDto dto) {
+		logger.info("INSERT RESULT");	
+		int res = biz.insert(dto);
+		if(res>0) {
+			return "redirect:list.do";
+		} else {
+			return "redirect:insert.do";
+		}
+	}
+	
+	@RequestMapping("/test.do")
+	public String test() {
+		logger.info("TRANSACTION");
+		biz.test();
+		return "redirect:list.do";
 	}
 	
 }

@@ -46,7 +46,7 @@
 		<tfoot>
 			<tr>
 				<td>
-					<input type="button" value="글작성"/>				
+					<input type="button" value="글작성" onclick="location.href='insert.do'"/>				
 				</td>
 			</tr>
 		</tfoot>

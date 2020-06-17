@@ -27,4 +27,21 @@ public class BoardDaoImpl implements BoardDao {
 		return list;
 	}
 
+	@Override
+	public int insert(BoardDto dto) {
+		int res = 0;
+		try {
+			res = sqlSession.insert(NAMESPACE+"insert",dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("[ERROR] : BoardDaoImpl insert");
+		}
+		return res;
+	}
+	
+	@Override
+	public String test() {
+		return null;
+	}
+
 }
